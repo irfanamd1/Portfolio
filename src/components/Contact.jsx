@@ -4,35 +4,40 @@ import { LuMailPlus } from "react-icons/lu";
 import { ImSpinner2 } from "react-icons/im";
 import emailjs from "@emailjs/browser";
 import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
-import { MdEmail } from "react-icons/md";
-import { FaLocationDot } from "react-icons/fa6";
-import { RiLinkedinFill } from "react-icons/ri";
-import { IoLogoGithub } from "react-icons/io";
+import { motion } from 'motion/react'
+import { contact1, contact2 } from "../assets";
 
 const Contact = () => {
   const formElement = useRef(null);
 
-  const [userName, setUserName] = useState("");
-
-  const [userEmail, setUserEmail] = useState("");
-
-  const [userMessage, setUserMessage] = useState("");
+  const [formInput, setFormInput] = useState({
+    user_name: '',
+    user_email: '',
+    user_message: ''
+  })
 
   const [sendEmailLoading, setSendEmailLoading] = useState(false);
 
   const [emailSentCounter, setEmailSentCounter] = useState(0);
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+  
+    setFormInput((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  
+
   const resetForm = () => {
-    setUserName("");
-    setUserEmail("");
-    setUserMessage("");
+    setFormInput({ user_name: "", user_email: "", user_message: "" });
   };
 
   const sendEmailHandler = async (e) => {
     e.preventDefault();
 
-    if (!userName.trim() || !userEmail.trim() || !userMessage.trim()) {
+    if (!formInput.user_name.trim() || !formInput.user_email.trim() || !formInput.user_message.trim()) {
       toast.error("Fill the form to send email", { duration: 2000 });
       return;
     }
@@ -81,7 +86,7 @@ const Contact = () => {
   });
 
   return (
-    <motion.div ref={ ref } id="contact" className="px-8 xl:px-20 sm:px-16 mt-10">
+    <div id="contact" className="px-8 xl:px-20 sm:px-16 mt-10">
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -93,11 +98,13 @@ const Contact = () => {
       </motion.div>
       <div className="grid lg:grid-cols-2">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
+          ref={ ref }
+          initial={{ opacity: 0, x: -100 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ delay: 0.6, duration: 0.5 }}
           className="border border-[#464c6a] rounded-md p-6 mt-10 mx-6"
         >
+          <h1 className="text-[#16f2b3] lg:text-xl">CONNECT WITH ME</h1>
           <form ref={formElement} onSubmit={sendEmailHandler} className="mt-5">
             <div className="flex flex-col gap-3">
               {/* Name Input */}
@@ -106,8 +113,8 @@ const Contact = () => {
                 <input
                   required
                   name="user_name"
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
+                  value={formInput.user_name}
+                  onChange={ handleInputChange }
                   className="my-1 bg-[#10172d] rounded-md border-[#464c6a] px-4 py-2 w-full border focus:border-[#16f2b3] outline-none text-white"
                   type="text"
                   placeholder="Enter Name"
@@ -120,8 +127,8 @@ const Contact = () => {
                 <input
                   required
                   name="user_email"
-                  value={userEmail}
-                  onChange={(e) => setUserEmail(e.target.value)}
+                  value={formInput.user_email}
+                  onChange={ handleInputChange }
                   className="mt-1 bg-[#10172d] rounded-md border-[#464c6a] px-4 py-2 w-full border focus:border-[#16f2b3] outline-none text-white"
                   type="email"
                   placeholder="Enter Email Address"
@@ -134,8 +141,8 @@ const Contact = () => {
                 <textarea
                   required
                   name="user_message"
-                  value={userMessage}
-                  onChange={(e) => setUserMessage(e.target.value)}
+                  value={formInput.user_message}
+                  onChange={ handleInputChange }
                   className="mt-1 resize-none bg-[#10172d] rounded-md border-[#464c6a] px-4 py-2 w-full border focus:border-[#16f2b3] outline-none text-white"
                   rows={3}
                   placeholder="Enter Message"
@@ -160,79 +167,55 @@ const Contact = () => {
           </form>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-5 mt-10 mx-6">
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="w-full border border-[#464c6a] rounded-md p-5"
-          >
-            <div className="flex flex-col justify-center items-center">
-              <MdEmail className="text-4xl text-[#16f2b3]" />
-              <h4 className="text-sm mt-2 text-white tracking-wide font-[500]">
-                Email
-              </h4>
-              <p className="text-sm mt-2 text-neutral-500 tracking-wide font-[500]">
-                irfanamd14@gmail.com
-              </p>
-              <a
-                className="text-white flex items-end gap-1 text-sm mt-2 transition duration-300 font-[300]"
-                href="mailto:irfanamd14@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
+          {
+            contact1.map((item, index) => (
+              <motion.div
+                key={ index }
+                initial={{ opacity: 0, x: 60 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="w-full border border-[#464c6a] rounded-md p-5"
               >
-                <span>Click me</span>
-              </a>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="w-full border border-[#464c6a] rounded-md p-5"
-          >
-            <div className="flex flex-col justify-center items-center">
-              <FaLocationDot className="text-4xl text-[#16f2b3]" />
-              <h4 className="text-sm mt-2 text-white tracking-wide font-[500]">
-                Location
-              </h4>
-              <p className="text-sm mt-2 text-neutral-500 tracking-wide font-[500]">
-                Kottar, Nagercoil - 629002
-              </p>
-              <a
-                className="text-white flex items-end gap-1 text-sm mt-2 transition duration-300 font-[300]"
-                href="https://maps.app.goo.gl/ECs8UFmZ4YoLdjDD6"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>Click me</span>
-              </a>
-            </div>
-          </motion.div>
-          <div className="flex items-center justify-center gap-10 mt-4 col-span-1">
-            <motion.div
-              initial={{ opacity: 0, x: -60 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="w-12 h-12 flex items-center justify-center text-xl bg-[#464c6a] hover:bg-[#16f2b3] rounded-full hover:scale-110 transition-all duration-700 ease-in-out cursor-pointer"
-            >
-              <a href="http://linkedin.com/in/irfan-ahamed-s" target="_blank">
-                <RiLinkedinFill />
-              </a>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="w-12 h-12 flex items-center justify-center text-xl bg-[#464c6a] hover:bg-[#16f2b3] rounded-full hover:scale-110 transition-all duration-700 ease-in-out cursor-pointer"
-            >
-              <a href="http://github.com/irfanamd1" target="_blank">
-                <IoLogoGithub />
-              </a>
-            </motion.div>
+                <div className="flex flex-col justify-center items-center">
+                  <item.icon className="text-4xl text-[#16f2b3]" />
+                  <h4 className="text-sm mt-2 text-white tracking-wide font-[500]">
+                    { item.name }
+                  </h4>
+                  <p className="text-sm mt-2 text-neutral-500 tracking-wide font-[500]">
+                    { item.content }
+                  </p>
+                  <a
+                    className="text-white flex items-end gap-1 text-sm mt-2 transition duration-300 font-[300]"
+                    href={ item.link }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>Click me</span>
+                  </a>
+                </div>
+              </motion.div>
+            ))
+          }
+          <div className="flex items-center gap-6 mt-4 col-span-1">
+            {
+              contact2.map((item, index) => (
+                <motion.div
+                  key={ index }
+                  initial={{ opacity: 0 }}
+                  animate={inView ? { opacity: 1 } : {}}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="w-12 h-12 flex items-center justify-center text-xl bg-[#464c6a] hover:bg-[#16f2b3] rounded-full hover:scale-110 transition-all duration-700 ease-in-out cursor-pointer"
+                >
+                  <a href={ item.link } target="_blank">
+                    <item.icon />
+                  </a>
+                </motion.div>
+              ))
+            }
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

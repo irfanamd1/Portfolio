@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.slick-slide {
-  padding: 10px 8px; 
+body {
+  background-color: #0d1123;
 }
 
-body {
-    background-color: #0d1123;
+.slick-slide {
+  padding: 10px 8px; 
 }
 
 .active {
     @apply text-[#ec4899] font-semibold;
 }
+

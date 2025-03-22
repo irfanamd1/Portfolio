@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { IoMenu, IoClose } from "react-icons/io5";
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Link } from 'react-scroll'
+import { navItems } from '../assets';
 
 const Navbar = () => {
+
     const [menu, setMenu] = useState(false);
 
     const [activeItem, setActiveItem] = useState('home');
@@ -26,15 +28,7 @@ const Navbar = () => {
                 damping: 40
             }
         }
-    }
-
-    const items = [
-        { id: 1, text: "Home", to:'home' },
-        { id: 2, text: "About", to:'about' },
-        { id: 3, text: "Skills", to:'skills' },
-        { id: 4, text: "Education", to:'education' },
-        { id: 5, text: "Contact", to:'contact' }
-    ]
+    }   
 
     return (
         <div className='fixed top-0 right-0 w-full z-40'>
@@ -49,24 +43,20 @@ const Navbar = () => {
                     <span className='text-white'>Irfan</span>
                     <span className='text-[#ec4899]'>Ahamed</span>
                 </div>
-                <div>
-                    <ul className='flex items-center justify-between list-none gap-14 text-white text-lg cursor-pointer'>
-                        {items.map(({ id, text, to }) => (
-                            <li key={id} className={`cursor-pointer list-none ${activeItem === to ? 'active' : ''}`}>
-                                <Link
-                                    to={to}
-                                    smooth={true}
-                                    duration={500}
-                                    offset={-100}
-                                    spy={true}             
-                                    activeClass="active" 
-                                    onClick={ () => setActiveItem('') }
-                                >
-                                    {text}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+                <div className='flex items-center justify-between list-none gap-14 text-white text-lg cursor-pointer'>
+                    {navItems.map(({ id, text, to }) => (
+                        <Link
+                            key={id} 
+                                className={`cursor- list-none hover:text-[#16f2b3] ${activeItem === to ? 'active' : ''}`}
+                                to={to}
+                                smooth={true}
+                                duration={500}
+                                offset={-100}
+                            onClick={ () => setActiveItem(to) }
+                        >
+                            {text}
+                        </Link>
+                    ))}
                 </div>
             </motion.div>
 
@@ -86,9 +76,9 @@ const Navbar = () => {
                     transition={{ duration: 0.5 }}
                     className='text-white text-2xl cursor-pointer'>
                     {menu ? (
-                        <IoClose onClick={() => setMenu(false)} />
+                        <IoClose aria-label="Close menu" onClick={() => setMenu(false)} />
                     ) : (
-                        <IoMenu onClick={() => setMenu(true)} />
+                        <IoMenu aria-label="Open menu" onClick={() => setMenu(true)} />
                     )}
                 </motion.div>
             </div>
@@ -102,7 +92,7 @@ const Navbar = () => {
                 style={{ clipPath: 'circle(30px at 90% 5%)' }}
             >
                 <div className="flex flex-col gap-4 text-white text-base px-4 py-6">
-                    {items.map(({ id, text, to }) => (
+                    {navItems.map(({ id, text, to }) => (
                         <div
                             key={id}
                             className={`cursor-pointer ${activeItem === to ? 'active' : ''}`}
@@ -113,9 +103,7 @@ const Navbar = () => {
                                 smooth={ true }
                                 duration={ 500 }
                                 offset={ -100 }
-                                spy={true}             
-                                activeClass="active"
-                                onClick={() => { setMenu(false), setActiveItem('') }}
+                                onClick={() => { setMenu(false), setActiveItem(to) }}
                             >
                                 {text}
                             </Link>
