@@ -79,7 +79,7 @@ export const education = [
 ]
 
 export const contact1 = [
-    { icon: MdEmail, name: "Email", content: `mailto:${email}`, link: email},
+    { icon: MdEmail, name: "Email", content: email, link: `mailto:${email}`},
     { icon: FaLocationDot, name: "Location", content: 'Kottar, Nagercoil - 629002', link: 'https://maps.app.goo.gl/ECs8UFmZ4YoLdjDD6'}
 ]
 
