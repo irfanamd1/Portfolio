@@ -26,7 +26,7 @@ const About = () => {
                     transition={{ delay: 0.6, duration: 0.5}}
                     className=' mx-auto mt-10 order-1 lg:order-2 '
                 >
-                    <img className='w-[280px] h-[300px] grayscale rounded-md hover:grayscale-0 hover:scale-110 transition-all ease-in-out duration-700' src={ profilePic } alt="Irfan Ahamed" />
+                    <img className='w-[240px] h-[300px] grayscale rounded-md hover:grayscale-0 hover:scale-110 transition-all ease-in-out duration-700' src={ profilePic } alt="Irfan Ahamed" />
                 </motion.div>
                 <motion.div 
                     initial={{ opacity: 0, x: -100}}
