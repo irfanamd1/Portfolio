@@ -68,7 +68,7 @@ export const projects = [
         name: 'AI-Recipe Generator',
         skills: ['React', 'JavaScript', 'TailwindCSS', 'Node with Express', 'MongoDB'],
         description: 'The AI Recipe Generator is a web app built with React, Tailwind CSS, Node.js, and Express, using MongoDB for data storage. It leverages the Google Gemini API to generate personalized recipes and uses Clerk for secure user authentication.',
-        link: 'https://recipe-client-seven.vercel.app'
+        link: 'https://chefzia.vercel.app'
     }
 ]
 
