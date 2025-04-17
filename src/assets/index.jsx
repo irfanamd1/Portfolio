@@ -1,4 +1,5 @@
 import profilePic from './profilePic.jpg'
+import proPic from './proPic.jpg'
 import bootstrap from './bootstrap.jpg'
 import css from './css.jpg'
 import db from './db.svg'
@@ -28,7 +29,7 @@ const github = 'http://github.com/irfanamd1'
 
 const linkedin = 'http://linkedin.com/in/irfan-ahamed-s'
 
-export const resume = 'https://drive.google.com/file/d/18SZRpEuWbI66LPbWQbQTu3mWXrLtClQf/view?usp=drivesdk'
+export const resume = 'https://drive.google.com/file/d/1QV1GNTlTdw6Lhwvn_-t5L1t9BMlCEx1e/view?usp=drivesdk'
 
 export const navItems = [
     { id: 1, text: "Home", to:'home' },
@@ -50,13 +51,13 @@ export const skills = [
     { name: 'HTML', image: html },
     { name: 'CSS', image: css },
     { name: 'JavaScript', image: js },
-    { name: 'Bootstrap', image: bootstrap },
+    // { name: 'Bootstrap', image: bootstrap },
     { name: 'TailwindCSS', image: tailwind },
     { name: 'MaterialUI', image: material },
     { name: 'NodeJs', image: node },
     { name: 'Express', image: express },
     { name: 'MongoDB', image: db },
-    { name: 'MySQL', image: sql },
+    // { name: 'MySQL', image: sql },
     { name: 'Git', image: git },
     { name: 'Git Hub', image: gith },
 ]
@@ -90,5 +91,6 @@ export const contact2 = [
 
 export {
     profilePic,
+    proPic,
     edu
 }

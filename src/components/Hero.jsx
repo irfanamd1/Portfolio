@@ -83,23 +83,25 @@ const Hero = () => {
               <span className="text-gray-400">', '</span>
               <span className="text-amber-300">Redux</span>
               <span className="text-gray-400">', '</span>
-              <span className="text-amber-300">NodeJs with Express</span>
+              <span className="text-amber-300">NodeJs</span>
+              <span className="text-gray-400">', '</span>
+              <span className="text-amber-300">ExpressJs</span>
               <span className="text-gray-400">', '</span>
               <span className="text-amber-300">JavaScript</span>
               <span className="text-gray-400">', '</span>
               <span className="text-amber-300">MongoDB</span>
               <span className="text-gray-400">', '</span>
-              <span className="text-amber-300">MySql</span>
-              <span className="text-gray-400">', '</span>
+              {/* <span className="text-amber-300">MySql</span>
+              <span className="text-gray-400">', '</span> */}
               <span className="text-amber-300">HTML</span>
               <span className="text-gray-400">', '</span>
               <span className="text-amber-300">CSS</span>
               <span className="text-gray-400">', '</span>
-              <span className="text-amber-300">Bootstap</span>
+              {/* <span className="text-amber-300">Bootstap</span>
+              <span className="text-gray-400">', '</span> */}
+              <span className="text-amber-300">TailwindCSS</span>
               <span className="text-gray-400">', '</span>
-              <span className="text-amber-300">Tailwind CSS</span>
-              <span className="text-gray-400">', '</span>
-              <span className="text-amber-300">Material UI</span>
+              <span className="text-amber-300">MaterialUI</span>
               <span className="text-gray-400">'],</span>
             </div>
             <div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { profilePic } from '../assets/index.jsx'
+import { profilePic, proPic } from '../assets/index.jsx'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'motion/react'
 
@@ -26,7 +26,7 @@ const About = () => {
                     transition={{ delay: 0.6, duration: 0.5}}
                     className=' mx-auto mt-10 order-1 lg:order-2 '
                 >
-                    <img className='w-[240px] h-[300px] grayscale rounded-md hover:grayscale-0 hover:scale-110 transition-all ease-in-out duration-700' src={ profilePic } alt="Irfan Ahamed" />
+                    <img className='w-[240px] h-[300px] grayscale rounded-md hover:grayscale-0 hover:scale-110 transition-all ease-in-out duration-700' src={ proPic } alt="Irfan Ahamed" />
                 </motion.div>
                 <motion.div 
                     initial={{ opacity: 0, x: -100}}
@@ -34,8 +34,7 @@ const About = () => {
                     transition={{ delay: 0.6, duration: 0.5}}
                     className='mt-10 text-white text-base lg:text-[18px] lg:leading-8 order-2 lg:order-1 '
                 >
-                    <p>My Name is Irfan Ahamed and I'm Motivated and passionate Full Stack Web Developer with a strong foundation in frontend and backend technologies. Skilled in creating dynamic, user-centered applications using HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, Material UI, React.js, Node.js, Express, and REST APIs. Proficient in managing data with MongoDB and MySQL to deliver seamless and efficient performance. Eager to collaborate with innovative teams and contribute to impactful projects. Open to job opportunities that match my skills and passion for web development.</p>
-                </motion.div>
+<p>My name is Irfan Ahamed, and I am a highly motivated and passionate Full Stack Web Developer with a solid foundation in both frontend and backend technologies. I specialize in building dynamic, user-focused web applications using modern tools such as HTML, CSS, JavaScript, Bootstrap, TailwindCSS, MaterialUI, and React.js on the frontend, alongside Node.js, Express, and RESTful APIs on the backend. I am also proficient in managing and optimizing databases with MongoDB to ensure high-performance and scalable solutions. I thrive in collaborative environments and am eager to contribute to innovative teams and impactful projects. I am actively seeking job opportunities that align with my skills and enthusiasm for full stack web development.</p>                </motion.div>
             </div>
         </motion.div>
     </div>
