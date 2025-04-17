@@ -77,7 +77,7 @@ export const projects = [
         img: project2,
         name: 'AI-Trip Planner',
         skills: ['React', 'JavaScript', 'TailwindCSS', 'Firebase', 'Google API'],
-        description: 'The AI Recipe Generator is a web app built with React, TailwindCSS, Firebase, and Google APIs, using Firestore for data storage. It leverages the Google API to generate personalized custom itineraries and insights.',
+        description: 'The AI Trip Planner is a web app built with React, TailwindCSS, Firebase, and Google APIs, using Firestore for data storage. It leverages the Google API to generate personalized custom itineraries and insights.',
         link: 'https://tripia.vercel.app'
     }
 ]
