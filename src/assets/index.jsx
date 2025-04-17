@@ -1,6 +1,6 @@
 import profilePic from './profilePic.jpg'
 import proPic from './proPic.jpg'
-import bootstrap from './bootstrap.jpg'
+// import bootstrap from './bootstrap.jpg'
 import css from './css.jpg'
 import db from './db.svg'
 import express from './express.jpg'
@@ -10,7 +10,7 @@ import html from './html.jpg'
 import js from './js.jpg'
 import node from './node.jpg'
 import react from './react.svg'
-import sql from './sql.jpg'
+// import sql from './sql.jpg'
 import tailwind from './tailwind.jpg'
 import material from './material.jpg'
 import { FaSchool } from "react-icons/fa6";
@@ -22,6 +22,7 @@ import { RiLinkedinFill } from "react-icons/ri";
 import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
 import project1 from './pjt1.png'
+import project2 from './pjt2.png'
 
 const email = 'irfanamd14@gmail.com'
 
@@ -67,9 +68,17 @@ export const projects = [
         id: 1,
         img: project1,
         name: 'AI-Recipe Generator',
-        skills: ['React', 'JavaScript', 'TailwindCSS', 'Node with Express', 'MongoDB'],
-        description: 'The AI Recipe Generator is a web app built with React, Tailwind CSS, Node.js, and Express, using MongoDB for data storage. It leverages the Google Gemini API to generate personalized recipes and uses Clerk for secure user authentication.',
+        skills: ['React', 'JavaScript', 'TailwindCSS', 'Node with Express', 'MongoDB', 'Google API'],
+        description: 'The AI Recipe Generator is a web app built with React, Tailwind CSS, Node.js, and Express, using MongoDB for data storage. It leverages the Google API to generate personalized recipes and uses Clerk for secure user authentication.',
         link: 'https://chefzia.vercel.app'
+    },
+    {
+        id: 2,
+        img: project2,
+        name: 'AI-Trip Planner',
+        skills: ['React', 'JavaScript', 'TailwindCSS', 'Firebase', 'Google API'],
+        description: 'The AI Recipe Generator is a web app built with React, TailwindCSS, Firebase, and Google APIs, using Firestore for data storage. It leverages the Google API to generate personalized custom itineraries and insights.',
+        link: 'https://tripia.vercel.app'
     }
 ]
 

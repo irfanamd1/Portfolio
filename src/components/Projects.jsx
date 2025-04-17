@@ -28,7 +28,7 @@ const Projects = () => {
         >
             {projects.map((item) => (
                 <div className='border border-[#2a2e5a] rounded-md bg-[#0d1225] overflow-hidden mx-6' key={item.id}>
-                    <img className='rounded-t-md' src={item.img} alt={item.name} />
+                    <img className='rounded-t-md w-full h-36' src={item.img} alt={item.name} />
                     <div className='p-4'>
                         <p className='text-[#ec4899] text-xl lg:text-2xl font-bold mb-2'>{item.name}</p>
                         <p className='text-white text-sm lg:text-base mb-2'>
